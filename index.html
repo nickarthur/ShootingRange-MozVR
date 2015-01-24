@@ -86,14 +86,14 @@
     //
     //
     // dart board wall and stuff
-    var backGeo = new THREE.PlaneGeometry(0.5,0.5);
+    var backGeo = new THREE.PlaneGeometry(0.7,0.7);
     var texture = THREE.ImageUtils.loadTexture('images/dartboard.jpg', {}, function() {
         renderer.render(scene);
     });
     var material = new THREE.MeshBasicMaterial({map: texture});
     var dartBoard = new THREE.Mesh(backGeo, material);
 
-    dartBoard.position.set(-0.06,-0.03,-0.3);
+    dartBoard.position.set(-0.06,0,-0.6);
     scene.add(dartBoard);
 
 
