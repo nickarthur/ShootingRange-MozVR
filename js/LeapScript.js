@@ -2,7 +2,28 @@
  * Created by Mitchell Corish on 2015-01-24.
  */
 // Connect to localhost and start getting frames
-Leap.loop();
+Leap.loop({enableGestures: true},
+    function(frame) {
+        if (frame.valid && frame.gesture.length > 0) {
+            frame.gestures.forEach(function(gesture) {
+                switch (gesture.type){
+                    case "circle":
+                        console.log("Circle Gesture");
+                        break;
+                    case "keyTap":
+                        console.log("Key Tap Gesture");
+                        break;
+                    case "screenTap":
+                        console.log("Screen Tap Gesture");
+                        break;
+                    case "swipe":
+                        console.log("Swipe Gesture");
+                        break;
+                }
+            });
+        }
+    }
+);
 
 // Docs: http://leapmotion.github.io/leapjs-plugins/main/transform/
 Leap.loopController.use('transform', {
