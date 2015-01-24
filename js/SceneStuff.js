@@ -44,7 +44,7 @@ scene.add(dartBoard);
 //Attempting to add walls for a room
 
 //Wall behind player
-var topGeo = new THREE.PlaneBufferGeometry(0.7,-0.7);
+var topGeo = new THREE.PlaneBufferGeometry(1.7,-1.7);
 var wallTexture = THREE.ImageUtils.loadTexture('images/wall.jpg', {}, function() {
     renderer.render(scene, camera);
 });
