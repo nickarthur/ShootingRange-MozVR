@@ -41,6 +41,9 @@ axisHelper = new THREE.AxisHelper(0.12);
 axisHelper.position.set(0,-0.03,-0.30);
 scene.add(axisHelper);
 
+gridHelper = new THREE.GridHelper(10,1);
+gridHelper.position.set(0,-5,0);
+scene.add(gridHelper);
 //
 // ADD CUBES (blah blah)
 //
