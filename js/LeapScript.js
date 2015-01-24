@@ -25,10 +25,22 @@ Leap.loop({enableGestures: true},
                     */
                 });
             }
-            if (frame.tools.length > 0) {
-                frame.tools.forEach(function(tool){
-                    console.log(tool.tipVelocity);
-                })
+            if (frame.hands.length > 0) {
+                var oldVelocity = 0;
+                var acceleration = 0;
+                var hand = frame.hands[0];
+                var nameMap = ["thumb", "index", "middle", "ring", "pinky"];
+                hand.pointables.forEach(function (pointable) {
+                    if (pointable.tool) {
+                        if (nameMap[pointable.type] === "index") {
+                            var newVelocity = pointable.tipVelocity;
+                            console.log(newVelocity);
+                            acceleration = (oldVelocity - newVelocity)/10;
+                            oldVelocity = newVelocity;
+                            console.log(acceleration);
+                        }
+                    }
+                });
             }
         }
     }
