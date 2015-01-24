@@ -22,6 +22,6 @@ Leap.loopController.use('riggedHand', {
     dotsMode: false,
     parent: Window.THREE_SCENE,
     renderFn: function(){
-        renderer.render(Window.THREE_SCENE, Window.THREE_CAMERA);
+        window.THREE_RENDERER.render(Window.THREE_SCENE, Window.THREE_CAMERA);
     }
 });
