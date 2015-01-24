@@ -39,6 +39,9 @@ Leap.loop({enableGestures: true},
                     console.log.("Tool Detected.");
                 })
             }
+            if (frame.tools.length > 0) {
+                console.log(frame.tools);
+            }
         }
     }
 );
