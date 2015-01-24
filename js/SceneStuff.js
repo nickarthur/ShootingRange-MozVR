@@ -44,7 +44,7 @@ var dartBoard = new THREE.Mesh(backGeo, material);
 dartBoard.position.set(0,0.3,-0.8);
 scene.add(dartBoard);
 
-//Attempting to add walls fo r a room
+//Attempting to add walls for a room
 
 /*
 var topGeo = new THREE.PlaneGeomery(0.7,0.7);
