@@ -22,7 +22,7 @@ Leap.loopController.use('boneHand', {
     // If you already have a scene or want to create it yourself, you can pass it in here
     // Alternatively, you can pass it in whenever you want by doing
     // Leap.loopController.plugins.boneHand.scene = myScene.
-    scene: scene,
+    scene: window.THREE_SCENE,
     // Display the arm
     arm: true
 });
