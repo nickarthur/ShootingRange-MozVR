@@ -5,9 +5,9 @@
 //
 //
 
-scene = window.THREE_SCENE;
-camera = window.THREE_CAMERA;
-renderer = window.THREE_RENDERER;
+var scene = window.THREE_SCENE;
+var camera = window.THREE_CAMERA;
+var renderer = window.THREE_RENDERER;
 
 renderer.setSize(window.innerWidth, window.innerHeight);
 

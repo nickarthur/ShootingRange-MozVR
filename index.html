@@ -37,20 +37,8 @@
 
 </body>
 
-//scene config and 3D word related stuff
-<script src="js/SceneStuff.js"></script>
-
-//Leap Motion Script
-<script src="js/LeapScript.js"></script>
-
-//VR Script
-<script src="js/VRScript.js"></script>
-
 <script>
-    //
-    // MAKE IT GO
-    //
-    //
+    //set it up
     var scene = new THREE.Scene();
 
     var camera = new THREE.PerspectiveCamera(
@@ -73,6 +61,21 @@
     window.THREE_SCENE = scene;
     window.THREE_CAMERA = camera;
     window.THREE_RENDERER = renderer;
+</script>
+//scene config and 3D word related stuff
+<script src="js/SceneStuff.js"></script>
+
+//Leap Motion Script
+<script src="js/LeapScript.js"></script>
+
+//VR Script
+<script src="js/VRScript.js"></script>
+
+<script>
+    //
+    // MAKE IT GO
+    //
+    //
 
     var render = function() {
         vrControls.update();
