@@ -34,7 +34,7 @@ Leap.loopController.use('transform', {
     // This causes the camera's matrix transforms (position, rotation, scale) to be applied to the hands themselves
     // The parent of the bones remain the scene, allowing the data to remain in easy-to-work-with world space.
     // (As the hands will usually interact with multiple objects in the scene.)
-    effectiveParent: Window.THREE_CAMERA,
+    effectiveParent: window.THREE_CAMERA,
 
 });
 

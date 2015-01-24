@@ -5,28 +5,9 @@
 //
 //
 
-var scene = new THREE.Scene();
-
-var camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    10000
-);
-
-var canvas = document.getElementById('scene');
-canvas.style.position = 'absolute';
-canvas.style.top = 0;
-canvas.style.left = 0;
-
-var renderer = new THREE.WebGLRenderer({
-    antialias: true,
-    canvas: canvas
-});
-
-window.THREE_SCENE = scene;
-window.THREE_CAMERA = camera;
-window.THREE_RENDERER = renderer;
+scene = window.THREE_SCENE;
+camera = window.THREE_CAMERA;
+renderer = window.THREE_RENDERER;
 
 renderer.setSize(window.innerWidth, window.innerHeight);
 

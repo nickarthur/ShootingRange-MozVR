@@ -51,10 +51,32 @@
     // MAKE IT GO
     //
     //
+    var scene = new THREE.Scene();
+
+    var camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            10000
+    );
+
+    var canvas = document.getElementById('scene');
+    canvas.style.position = 'absolute';
+    canvas.style.top = 0;
+    canvas.style.left = 0;
+
+    var renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        canvas: canvas
+    });
+
+    window.THREE_SCENE = scene;
+    window.THREE_CAMERA = camera;
+    window.THREE_RENDERER = renderer;
 
     var render = function() {
         vrControls.update();
-        vrEffect.render(window.THREE_SCENE, window.THREE_CAMERA);
+        vrEffect.render(scene, camera);
 
         requestAnimationFrame(render);
     };
@@ -73,12 +95,12 @@
 
     var timerID = setInterval(function(){
 
-        if (window.THREE_CAMERA.position.x !== 0 && !receivingPositionalData){
+        if (camera.position.x !== 0 && !receivingPositionalData){
             receivingPositionalData = true;
             console.log("receiving positional data");
         }
 
-        if (window.THREE_CAMERA.quaternion.x !== 0 && !receivingOrientationData){
+        if (camera.quaternion.x !== 0 && !receivingOrientationData){
             receivingOrientationData = true;
             console.log("receiving orientation data");
         }
