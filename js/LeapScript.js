@@ -25,22 +25,10 @@ Leap.loop({enableGestures: true},
                     */
                 });
             }
-            if (frame.hands.length > 0) {
-                var hand = frame.hands[0];
-                var nameMap = ["thumb", "index", "middle", "ring", "pinky"];
-                //hand.pointables.forEach(function (pointable) {
-                //    if (pointable.tool) {
-                //        console.log("Tool");
-                //        var dart = pointable;
-                //    }//else
-                //        //console.log(nameMap[pointable.type]);
-                //});
-                hand.tools.forEach(function () {
-                    console.log("Tool Detected.");
-                })
-            }
             if (frame.tools.length > 0) {
-                console.log(frame.tools);
+                frame.tools.forEach(function(tool){
+                    console.log(tool.tipVelocity);
+                })
             }
         }
     }
