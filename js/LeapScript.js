@@ -41,7 +41,7 @@ Leap.loop({enableGestures: true},
             //    });
             //}
             if (frame.tools.length > 0) {
-                console.log(frame.tools);
+                console.log(frame.tools[0]);
             }
         }
     }
