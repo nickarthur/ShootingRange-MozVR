@@ -25,20 +25,23 @@ Leap.loop({enableGestures: true},
                     */
                 });
             }
-            if (frame.hands.length > 0) {
-                var oldVelocity = 0;
-                var acceleration = 0;
-                var hand = frame.hands[0];
-                var nameMap = ["thumb", "index", "middle", "ring", "pinky"];
-                frame.pointables.forEach(function (pointable) {
-                    if (nameMap[pointable.type] === "index" || nameMap[pointable.type] === "thumb") {
-                        var newVelocity = pointable.tipVelocity;
-                        console.log(newVelocity);
-                        acceleration = (oldVelocity - newVelocity)/10;
-                        oldVelocity = newVelocity;
-                        console.log(acceleration);
-                    }
-                });
+            //if (frame.hands.length > 0) {
+            //    var oldVelocity = 0;
+            //    var acceleration = 0;
+            //    var hand = frame.hands[0];
+            //    var nameMap = ["thumb", "index", "middle", "ring", "pinky"];
+            //    frame.pointables.forEach(function (pointable) {
+            //        if (nameMap[pointable.type] === "index" || nameMap[pointable.type] === "thumb") {
+            //            var newVelocity = pointable.tipVelocity;
+            //            console.log(newVelocity);
+            //            acceleration = (oldVelocity - newVelocity)/10;
+            //            oldVelocity = newVelocity;
+            //            console.log(acceleration);
+            //        }
+            //    });
+            //}
+            if (frame.tools.length > 0) {
+                console.log(frame.tools);
             }
         }
     }
