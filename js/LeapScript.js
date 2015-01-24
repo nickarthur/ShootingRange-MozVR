@@ -18,10 +18,11 @@ Leap.loopController.use('transform', {
 });
 
 // Docs: http://leapmotion.github.io/leapjs-plugins/main/bone-hand/
-Leap.loopController.use('riggedHand', {
-    dotsMode: false,
-    parent: window.THREE_SCENE,
-    renderFn: function () {
-        window.THREE_RENDERER.render(window.THREE_SCENE, window.THREE_CAMERA);
-    }
+Leap.loopController.use('boneHand', {
+    // If you already have a scene or want to create it yourself, you can pass it in here
+    // Alternatively, you can pass it in whenever you want by doing
+    // Leap.loopController.plugins.boneHand.scene = myScene.
+    scene: scene,
+    // Display the arm
+    arm: true
 });
