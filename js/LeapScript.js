@@ -13,15 +13,15 @@ Leap.loopController.use('transform', {
     // This causes the camera's matrix transforms (position, rotation, scale) to be applied to the hands themselves
     // The parent of the bones remain the scene, allowing the data to remain in easy-to-work-with world space.
     // (As the hands will usually interact with multiple objects in the scene.)
-    effectiveParent: camera
+    effectiveParent: Window.THREE_CAMERA,
 
 });
 
 // Docs: http://leapmotion.github.io/leapjs-plugins/main/bone-hand/
 Leap.loopController.use('riggedHand', {
     dotsMode: false,
-    parent: scene,
+    parent: Window.THREE_SCENE,
     renderFn: function(){
-        renderer.render(scene, camera);
+        renderer.render(Window.THREE_SCENE, Window.THREE_CAMERA);
     }
 });

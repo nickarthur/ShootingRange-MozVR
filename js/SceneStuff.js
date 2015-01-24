@@ -14,6 +14,9 @@ var camera = new THREE.PerspectiveCamera(
     10000
 );
 
+Window.THREE_SCENE = scene;
+Window.THREE_CAMERA = camera;
+
 var canvas = document.getElementById('scene');
 canvas.style.position = 'absolute';
 canvas.style.top = 0;
