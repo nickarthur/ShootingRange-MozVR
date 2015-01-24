@@ -4,23 +4,35 @@
 // Connect to localhost and start getting frames
 Leap.loop({enableGestures: true},
     function(frame) {
-        if (frame.valid && frame.gestures.length > 0) {
-            frame.gestures.forEach(function(gesture) {
-                switch (gesture.type){
-                    case "circle":
-                        console.log("Circle Gesture");
-                        break;
-                    case "keyTap":
-                        console.log("Key Tap Gesture");
-                        break;
-                    case "screenTap":
-                        console.log("Screen Tap Gesture");
-                        break;
-                    case "swipe":
-                        console.log("Swipe Gesture");
-                        break;
-                }
-            });
+        if (frame.valid) {
+            if (frame.gestures.length > 0) {
+                frame.gestures.forEach(function (gesture) {
+                    switch (gesture.type) {
+                        case "circle":
+                            console.log("Circle Gesture");
+                            break;
+                        case "keyTap":
+                            console.log("Key Tap Gesture");
+                            break;
+                        case "screenTap":
+                            console.log("Screen Tap Gesture");
+                            break;
+                        case "swipe":
+                            console.log("Swipe Gesture");
+                            break;
+                    }
+                });
+            }
+            if (frame.hands.length > 0) {
+                var hand = frame.hands[0];
+                var nameMap = ["thumb", "index", "middle", "ring", "pinky"];
+                hand.pointables.forEach(function (pointable) {
+                    if (pointable.tool)
+                        console.log("Tool");
+                    else
+                        console.log(nameMap[pointable.type]);
+                });
+            }
         }
     }
 );
