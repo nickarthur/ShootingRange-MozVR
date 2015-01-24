@@ -74,12 +74,12 @@
 
     var timerID = setInterval(function(){
 
-        if (camera.position.x !== 0 && !receivingPositionalData){
+        if (window.THREE_CAMERA.position.x !== 0 && !receivingPositionalData){
             receivingPositionalData = true;
             console.log("receiving positional data");
         }
 
-        if (camera.quaternion.x !== 0 && !receivingOrientationData){
+        if (window.THREE_CAMERA.quaternion.x !== 0 && !receivingOrientationData){
             receivingOrientationData = true;
             console.log("receiving orientation data");
         }
