@@ -87,7 +87,11 @@
     //
 
     var backGeo = new THREE.PlaneGeometry(10,10);
-    var backMesh = new THREE
+    var texture = THREE.ImageUtils.loadTexture('images/dartboard.jpg', {}, function() {
+        renderer.render(scene);
+    });
+    var material = new THREE.MeshBasicMaterial({map: texture});
+    var backMesh = new THREE.Mesh(backGeo, material);
 
     var cubeGeo = new THREE.BoxGeometry(0.032, 0.032, 0.032);
     var cubeMesh = new THREE.MeshPhongMaterial({color: 0x00cc00});
