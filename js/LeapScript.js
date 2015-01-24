@@ -4,7 +4,7 @@
 // Connect to localhost and start getting frames
 Leap.loop({enableGestures: true},
     function(frame) {
-        if (frame.valid && frame.gesture.length > 0) {
+        if (frame.valid && frame.gestures.length > 0) {
             frame.gestures.forEach(function(gesture) {
                 switch (gesture.type){
                     case "circle":
