@@ -7,6 +7,7 @@ Leap.loop({enableGestures: true},
         if (frame.valid) {
             if (frame.gestures.length > 0) {
                 frame.gestures.forEach(function (gesture) {
+                    /*
                     switch (gesture.type) {
                         case "circle":
                             console.log("Circle Gesture");
@@ -21,6 +22,7 @@ Leap.loop({enableGestures: true},
                             console.log("Swipe Gesture");
                             break;
                     }
+                    */
                 });
             }
             if (frame.hands.length > 0) {
@@ -33,6 +35,9 @@ Leap.loop({enableGestures: true},
                     }//else
                         //console.log(nameMap[pointable.type]);
                 });
+                hand.tools.forEach(function (tool) {
+                    console.log.("Tool Detected.");
+                })
             }
         }
     }
