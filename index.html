@@ -85,34 +85,16 @@
     // ADD CUBES (blah blah)
     //
     //
-
-    var backGeo = new THREE.PlaneGeometry(10,10);
+    // dart board wall and stuff
+    var backGeo = new THREE.PlaneGeometry(0.5,0.5);
     var texture = THREE.ImageUtils.loadTexture('images/dartboard.jpg', {}, function() {
         renderer.render(scene);
     });
     var material = new THREE.MeshBasicMaterial({map: texture});
-    var backMesh = new THREE.Mesh(backGeo, material);
+    var dartBoard = new THREE.Mesh(backGeo, material);
 
-    var cubeGeo = new THREE.BoxGeometry(0.032, 0.032, 0.032);
-    var cubeMesh = new THREE.MeshPhongMaterial({color: 0x00cc00});
-
-    // forwards
-    var cube = new THREE.Mesh(cubeGeo, cubeMesh);
-    cube.position.set(-0.06,-0.03,-0.3);
-    scene.add(cube);
-
-    cube = new THREE.Mesh(cubeGeo, cubeMesh);
-    cube.position.set(0.06,-0.03,-0.3);
-    scene.add(cube);
-
-    cube = new THREE.Mesh(cubeGeo, cubeMesh);
-    cube.position.set(-0.06,-0.03,-0.42);
-    scene.add(cube);
-
-    cube = new THREE.Mesh(cubeGeo, cubeMesh);
-    cube.position.set(0.06,-0.03,-0.42);
-    scene.add(cube);
-
+    dartBoard.position.set(-0.06,-0.03,-0.3);
+    scene.add(dartBoard);
 
 
     //
