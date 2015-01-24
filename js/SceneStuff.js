@@ -14,9 +14,6 @@ var camera = new THREE.PerspectiveCamera(
     10000
 );
 
-Window.THREE_SCENE = scene;
-Window.THREE_CAMERA = camera;
-
 var canvas = document.getElementById('scene');
 canvas.style.position = 'absolute';
 canvas.style.top = 0;
@@ -26,6 +23,10 @@ var renderer = new THREE.WebGLRenderer({
     antialias: true,
     canvas: canvas
 });
+
+window.THREE_SCENE = scene;
+window.THREE_CAMERA = camera;
+window.THREE_RENDERER = renderer;
 
 renderer.setSize(window.innerWidth, window.innerHeight);
 

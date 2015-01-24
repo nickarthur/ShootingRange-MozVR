@@ -20,8 +20,8 @@ Leap.loopController.use('transform', {
 // Docs: http://leapmotion.github.io/leapjs-plugins/main/bone-hand/
 Leap.loopController.use('riggedHand', {
     dotsMode: false,
-    parent: Window.THREE_SCENE,
-    renderFn: function(){
-        renderer.render(Window.THREE_SCENE, Window.THREE_CAMERA);
+    parent: window.THREE_SCENE,
+    renderFn: function () {
+        window.THREE_RENDERER.render(window.THREE_SCENE, window.THREE_CAMERA);
     }
 });
