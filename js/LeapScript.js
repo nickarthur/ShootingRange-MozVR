@@ -27,10 +27,11 @@ Leap.loop({enableGestures: true},
                 var hand = frame.hands[0];
                 var nameMap = ["thumb", "index", "middle", "ring", "pinky"];
                 hand.pointables.forEach(function (pointable) {
-                    if (pointable.tool)
+                    if (pointable.tool) {
                         console.log("Tool");
-                    else
-                        console.log(nameMap[pointable.type]);
+                        var dart = pointable;
+                    }//else
+                        //console.log(nameMap[pointable.type]);
                 });
             }
         }
