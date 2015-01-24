@@ -29,14 +29,11 @@ scene.add(axisHelper);
 gridHelper = new THREE.GridHelper(10,1);
 gridHelper.position.set(0,-5,0);
 scene.add(gridHelper);
-//
-// ADD CUBES (blah blah)
-//
-//
+
 // dart board wall and stuff
-var backGeo = new THREE.PlaneGeometry(0.7,0.7);
+var backGeo = new THREE.PlaneBufferGeometry(0.7,0.7);
 var texture = THREE.ImageUtils.loadTexture('images/dartboard.jpg', {}, function() {
-    renderer.render(scene);
+    renderer.render(scene,camera);
 });
 var material = new THREE.MeshBasicMaterial({map: texture});
 var dartBoard = new THREE.Mesh(backGeo, material);
