@@ -32,7 +32,7 @@ Leap.loop({enableGestures: true},
                 var nameMap = ["thumb", "index", "middle", "ring", "pinky"];
                 hand.pointables.forEach(function (pointable) {
                     if (pointable.tool) {
-                        if (nameMap[pointable.type] === "index" | nameMap[pointable.type] === "thumb") {
+                        if (nameMap[pointable.type] === "index" || nameMap[pointable.type] === "thumb") {
                             var newVelocity = pointable.tipVelocity;
                             console.log(newVelocity);
                             acceleration = (oldVelocity - newVelocity)/10;
