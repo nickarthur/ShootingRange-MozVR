@@ -42,20 +42,22 @@ Leap.loop({enableGestures: true},
             //    });
             //}
             if (frame.tools.length > 0) {
-                var tool = frame.tools[0];
-                var newVelocity = tool.tipVelocity;
-                //console.log(newVelocity);
-                acceleration = {
-                    x: (newVelocity.x - oldVelocity.x) / 10,
-                    y: (newVelocity.y - oldVelocity.y) / 10,
-                    z: (newVelocity.z - oldVelocity.z) / 10
-                };
-                //acceleration = (newVelocity - oldVelocity) / 10;
-                oldVelocity = newVelocity;
-                console.log('acceleration: ' + acceleration);
+                //var tool = frame.tools[0];
+                frame.tools.forEach(function(tool) {
+                    var newVelocity = tool.tipVelocity;
+                    //console.log(newVelocity);
+                    acceleration = {
+                        x: (newVelocity.x - oldVelocity.x) / 10,
+                        y: (newVelocity.y - oldVelocity.y) / 10,
+                        z: (newVelocity.z - oldVelocity.z) / 10
+                    };
+                    //acceleration = (newVelocity - oldVelocity) / 10;
+                    oldVelocity = newVelocity;
+                    console.log('acceleration: ' + acceleration);
 
-                var dir = tool.direction;
-                console.log('direction: ' + dir);
+                    var dir = tool.direction;
+                    console.log('direction: ' + dir);
+                });
             }
         }
     }
