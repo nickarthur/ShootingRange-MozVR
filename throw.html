@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="assets/main.css" />
+  <!--<link rel="stylesheet" type="text/css" href="assets/main.css" />-->
   <title> Physics [live] </title>
 
   <script src="//js.leapmotion.com/leap-0.6.4.min.js"></script>
@@ -17,24 +17,6 @@
   <script src="assets/leap.pinchEvent.js"></script>
 </head>
 <body>
-
-<p>
-  This shows how to pick up an object and throw it. It shows:
-</p>
-<ul>
-  <li>BoneHand</li>
-  <li>VR setup</li>
-  <li>Transform</li>
-  <li>Debugging Pinches</li>
-  <li>Interacting</li>
-  <li>DIY Physics</li>
-</ul>
-<p>
-  To see progressive construction, see <a href="https://github.com/leapmotion-examples/talks/tree/master/SVWebgl%2011-12-14">slides from the talk</a>.
-</p>
-
-<div id="output"></div>
-
 </body>
 
 <script>
@@ -93,7 +75,7 @@
   var material = new THREE.MeshBasicMaterial({map: texture});
   var dartBoard = new THREE.Mesh(backGeo, material);
 
-  dartBoard.position.set(0,0.3,-0.8);
+  dartBoard.position.set(0,0.3,-1);
   scene.add(dartBoard);
 
   spheres = [];
