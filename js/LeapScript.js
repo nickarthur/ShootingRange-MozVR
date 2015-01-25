@@ -45,7 +45,12 @@ Leap.loop({enableGestures: true},
                 var tool = frame.tools[0];
                 var newVelopcity = tool.tipVelocity;
                 //console.log(newVelopcity);
-                acceleration = (newVelopcity - oldVelocity) / 10;
+                acceleration = {
+                    x: (newVelopcity.x - oldVelocity.x) / 10,
+                    y: (newVelopcity.y - oldVelocity.y) / 10,
+                    z: (newVelopcity.z - oldVelocity.z) / 10
+                };
+                //acceleration = (newVelopcity - oldVelocity) / 10;
                 oldVelocity = newVelopcity;
                 console.log('acceleration: ' + acceleration);
 
