@@ -78,6 +78,10 @@
   dartBoard.position.set(0,0.3,-1);
   scene.add(dartBoard);
 
+  gridHelper = new THREE.GridHelper(10,1);
+  gridHelper.position.set(0,-5,0);
+  scene.add(gridHelper);
+
   spheres = [];
   for (var i = 0; i < 4; i++){
     var sphere = new THREE.Mesh(
