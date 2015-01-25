@@ -43,7 +43,8 @@ Leap.loop({enableGestures: true},
             //}
             if (frame.tools.length > 0) {
                 //var tool = frame.tools[0];
-                frame.tools.forEach(function(tool) {
+                frame.tools.forEach(function(tool, i) {
+                    console.log('tool id: ' + i)
                     var newVelocity = tool.tipVelocity;
                     //console.log(newVelocity);
                     acceleration = {
