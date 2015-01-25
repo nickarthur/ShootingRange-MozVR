@@ -43,15 +43,15 @@ Leap.loop({enableGestures: true},
             //}
             if (frame.tools.length > 0) {
                 var tool = frame.tools[0];
-                var newVelopcity = tool.tipVelocity;
-                //console.log(newVelopcity);
+                var newVelocity = tool.tipVelocity;
+                //console.log(newVelocity);
                 acceleration = {
-                    x: (newVelopcity.x - oldVelocity.x) / 10,
-                    y: (newVelopcity.y - oldVelocity.y) / 10,
-                    z: (newVelopcity.z - oldVelocity.z) / 10
+                    x: (newVelocity.x - oldVelocity.x) / 10,
+                    y: (newVelocity.y - oldVelocity.y) / 10,
+                    z: (newVelocity.z - oldVelocity.z) / 10
                 };
-                //acceleration = (newVelopcity - oldVelocity) / 10;
-                oldVelocity = newVelopcity;
+                //acceleration = (newVelocity - oldVelocity) / 10;
+                oldVelocity = newVelocity;
                 console.log('acceleration: ' + acceleration);
 
                 var dir = tool.direction;
