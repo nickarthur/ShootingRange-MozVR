@@ -56,12 +56,12 @@ scene.add(wall);
 
 
 //Bottom wall
-var topGeo = new THREE.PlaneBufferGeometry(1.7,-1.7);
-var wallTexture = THREE.ImageUtils.loadTexture('images/wall.jpg', {}, function() {
+var bottomGeo = new THREE.PlaneBufferGeometry(-1.7,1.7);
+var wallBotTexture = THREE.ImageUtils.loadTexture('images/wall.jpg', {}, function() {
     renderer.render(scene, camera);
 });
-var wallMaterial = new THREE.MeshBasicMaterial({map: wallTexture});
-var wall = new THREE.Mesh(topGeo, wallMaterial);
+var wallBotMaterial = new THREE.MeshBasicMaterial({map: wallBotTexture});
+var wallBottom = new THREE.Mesh(bottomGeo, wallBotMaterial);
 
-wall.position.set(0,0.3,0.8);
-scene.add(wall);
+wallBottom.position.set(0,0.5,0.8);
+scene.add(wallBottom);
