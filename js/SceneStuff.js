@@ -63,5 +63,5 @@ var wallBotTexture = THREE.ImageUtils.loadTexture('images/wall.jpg', {}, functio
 var wallBotMaterial = new THREE.MeshBasicMaterial({map: wallBotTexture});
 var wallBottom = new THREE.Mesh(bottomGeo, wallBotMaterial);
 
-wallBottom.position.set(0,0.5,0.8);
+wallBottom.position.set(90,0.5,0.0);
 scene.add(wallBottom);
