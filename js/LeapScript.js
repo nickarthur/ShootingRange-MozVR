@@ -44,7 +44,7 @@ Leap.loop({enableGestures: true},
             if (frame.tools.length > 0) {
                 //var tool = frame.tools[0];
                 frame.tools.forEach(function(tool, i) {
-                    console.log('tool id: ' + i)
+                    console.log('tool id: ' + i);
                     var newVelocity = tool.tipVelocity;
                     //console.log(newVelocity);
                     acceleration = {
@@ -54,10 +54,12 @@ Leap.loop({enableGestures: true},
                     };
                     //acceleration = (newVelocity - oldVelocity) / 10;
                     oldVelocity = newVelocity;
-                    console.log('acceleration: ' + acceleration);
+                    console.log('acceleration:');
+                    console.log(acceleration);
 
                     var dir = tool.direction;
-                    console.log('direction: ' + dir);
+                    console.log('direction: ');
+                    console.log(dir);
                 });
             }
         }
