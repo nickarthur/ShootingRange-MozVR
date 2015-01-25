@@ -48,6 +48,9 @@ Leap.loop({enableGestures: true},
                 acceleration = (newVelopcity - oldVelocity) / 10;
                 oldVelocity = newVelopcity;
                 console.log('acceleration: ' + acceleration);
+
+                var dir = tool.direction;
+                console.log('direction: ' + dir);
             }
         }
     }
