@@ -1,6 +1,7 @@
 /**
  * Created by Mitchell Corish on 2015-01-24.
  */
+var oldVelocity = 0, acceleration = 0;
 // Connect to localhost and start getting frames
 Leap.loop({enableGestures: true},
     function(frame) {
@@ -41,7 +42,12 @@ Leap.loop({enableGestures: true},
             //    });
             //}
             if (frame.tools.length > 0) {
-                console.log(frame.tools[0]);
+                var tool = frame.tools[0];
+                var newVelopcity = tool.tipVelocity;
+                //console.log(newVelopcity);
+                acceleration = (newVelopcity - oldVelocity) / 10;
+                oldVelocity = newVelopcity;
+                console.log('acceleration: ' + acceleration);
             }
         }
     }
